@@ -23,10 +23,10 @@ const commandMap = {
   projects: "projects",
   social: "social",
   email: "email",
+  mail: "email",
   history: "history",
   sudo: "sudo",
   clear: "clear",
-  dev: "dev",
   twitter: "twitter",
   linkedin: "linkedin",
   instagram: "instagram",
@@ -109,7 +109,7 @@ function enterKey(e) {
 
   if (e.keyCode === 13) {
     const input = command.innerHTML.trim().toLowerCase();
-    addLine("[prithvi@archrx5500m]~$" + command.innerHTML, "no-animation", 0);
+    addLine("[alex@brain]~$" + command.innerHTML, "no-animation", 0);
 
     if (awaitingConfirmation && suggestedCommand) {
       if (input === "y") {
@@ -166,11 +166,19 @@ function commander(cmd) {
       break;
     case "email":
       addLine(
-        'Opening mailto:<a href="mailto:yewaleprithvi2003@gmail.com"> yewaleprithvi2003@gmail.com</a>...',
+        'Opening mailto:<a href="mailto:mail@alex-graf.eu">mail@alex-graf.eu</a>...',
         "color2",
         80,
       );
       newTab(email);
+      break;
+    case "mail":
+      addLine(
+          'Opening mailto:<a href="mailto:mail@alex-graf.eu">mail@alex-graf.eu</a>...',
+          "color2",
+          80,
+      );
+      newTab(mail);
       break;
     case "clear":
       setTimeout(function () {
@@ -188,10 +196,6 @@ function commander(cmd) {
         textarea.focus();
         scrollToBottom();
       }, 1);
-      break;
-    case "dev":
-      addLine("Opening Dev.to...", "color2", 80);
-      newTab(dev);
       break;
     case "twitter":
       addLine("Opening Twitter...", "color2", 0);
